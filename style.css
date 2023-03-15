@@ -1,0 +1,155 @@
+*{
+    padding:0;
+    margin: 0;
+    font-family: 'Rubik',sans-serif;
+}
+
+
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 20rem;
+
+    background-image: url(images/pattern-bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    color: white;
+    font-size: 2rem;
+    padding-top: 1.8rem;
+    font-weight: 500;
+}
+
+.search-bar{
+    width: 21rem;
+    height: 3rem;
+    display: flex;
+    margin-top: 2rem;
+}
+
+#ipInput{
+    width: 85%;
+    border-radius: .7rem 0 0 .7rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    border: none;
+}
+
+#ipInput::placeholder{
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+#submitBtn{
+    width: 15%;
+    height: 100%;
+    border-radius: 0 .7rem .7rem 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#submitBtn:active{
+    background-color: hsl(0, 0%, 17%);
+}
+
+
+.info-box{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 11rem;
+    z-index: 20;    
+    margin-left: auto; 
+    margin-right: auto;
+    border-radius: 1rem;
+    background-color: white;
+    width: 19rem;
+    height: fit-content;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 20px 50px -25px gray;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.info-title{
+    font-size: .8rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 59%);
+    letter-spacing: .1rem;
+}
+.info{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 17%);
+}
+
+.inv{
+    display: none;
+}
+
+#map{
+    position: absolute;
+    z-index: 5;
+    height: 40rem;
+    width: 100%;
+}
+
+@media screen and (min-width:840px){
+
+    header{
+        background-image: url(images/pattern-bg-desktop.png);
+        height: 17rem;
+    }
+
+    .search-bar{
+        width: 30rem;
+    }
+
+    .info-box{
+        flex-direction: row;
+        width: 80%;
+        max-width: 60rem;
+        height: 6rem;
+        align-items: flex-start;
+        padding-top: 2rem;
+        justify-content: space-between;
+        padding-top: 2.6rem;
+        bottom: 4.5rem;
+    }
+
+    .box{
+        justify-content: center;
+        padding-left: 1rem;
+        padding-right: .5rem;
+        gap: 1rem;
+        width: 10rem;
+        height: 4rem;
+        overflow-wrap:normal;
+        text-align: left;
+    }
+
+    .box:not(:first-child){
+       border-left: solid 1px hsla(0, 0%, 59%,.5);
+    }
+    .inv{
+        display: block;
+        visibility: hidden;
+    }
+}

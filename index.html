@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+</head>
+<body>
+<header>
+  <h1>IP Address Tracker</h1>
+  <div class="search-bar">
+    <input type="text" id="ipInput" name="ip" placeholder="Search for any IP address or domain" required>
+    <div id="submitBtn" role="button">
+      <img src="images/icon-arrow.svg" alt="">
+    </div>
+  </div>
+</header>
+<main>
+  <div class="info-box">
+    <div class="box">
+      <span class="info-title">IP ADDRESS</span>
+      <span id="ipAdrs" class="info">----------<br><span class="inv">d</span></span>
+    </div>
+    <div class="box">
+      <span class="info-title">LOCATION</span>
+      <span id="adrs" class="info">----------</span>
+    </div>
+    <div class="box">
+      <span class="info-title">TIMEZONE</span>
+      <span id="timeZone" class="info">----------<br><span class="inv">d</span></span>
+    </div>
+    <div class="box">
+      <span class="info-title">ISP</span>
+      <span id="isp" class="info">----------</span>
+    </div>
+  </div>
+  <div id="map"></div>
+</main>
+</body>
+<script src="script.js"></script>
+</html>
