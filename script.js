@@ -286,7 +286,11 @@ function ff(urlPar){
             isp.textContent=info.isp
             map.setView([info.location.lat,info.location.lng], 13)
             marker.setLatLng(L.latLng(info.location.lat,info.location.lng))
-        }else{
+        }
+        else if(info.code==400||info.messages=="Input correct domain."){
+            alert("Input correct domain.\nCorrect domain format: example.com")    
+        }
+        else{
             alert(info.messages)
         }
     })
@@ -299,7 +303,25 @@ submitBtn.addEventListener("click",()=>{
     if(ip==""){
         alert("input field is empty")
     }
-    else{
-        ff(`https://geo.ipify.org/api/v2/country,city?apiKey=at_nMcV2DJm1cDrkPzdPCzE0HyLd931g&ipAddress=${ip}`)
+    else if(ip.includes(".")){
+        let isNum=1
+        for(char of ip){
+            if(isNaN(parseInt(char))&&char!="."){
+                isNum=0
+                break
+            }
         }
+        if(isNum==0){
+            ff(`https://geo.ipify.org/api/v2/country,city?apiKey=at_nMcV2DJm1cDrkPzdPCzE0HyLd931g&&domain=${ip}`)
+        }
+        else{
+            ff(`https://geo.ipify.org/api/v2/country,city?apiKey=at_nMcV2DJm1cDrkPzdPCzE0HyLd931g&&ipAddress=${ip}`)
+        }
+    }
+    else if((!ip.includes(":"))&&(isNaN(ip))){
+            ff(`https://geo.ipify.org/api/v2/country,city?apiKey=at_nMcV2DJm1cDrkPzdPCzE0HyLd931g&&domain=${ip}`)
+    }
+    else{
+        ff(`https://geo.ipify.org/api/v2/country,city?apiKey=at_nMcV2DJm1cDrkPzdPCzE0HyLd931g&&ipAddress=${ip}`)
+    }
 })
